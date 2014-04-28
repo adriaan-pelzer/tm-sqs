@@ -5,13 +5,13 @@ var zlib = require ( 'zlib' );
 /********************/
 
 /*** logging ********/
-var config = {
+var loggerConfig = {
     logLevels: {
         SQS: 'ERROR'
     }
 };
 
-var l = require ( 'tm-log' ), logger = l.logger ( __filename, config ), inspect = l.inspect;
+var l = require ( 'tm-log' ), logger = l.logger ( __filename, loggerConfig ), inspect = l.inspect;
 /********************/
 
 var sqsFactory = function ( sqs ) {
@@ -74,6 +74,8 @@ var sqsFactory = function ( sqs ) {
     };
 };
 
-AWS.config.update ( _.pick ( config.aws, [ 'accessKeyId', 'secretAccessKey', 'region' ] ) );
+exports.init = function ( config ) {
+    AWS.config.update ( _.pick ( config.aws, [ 'accessKeyId', 'secretAccessKey', 'region' ] ) );
+};
 
 exports.sqs = sqsFactory ( new AWS.SQS () );
