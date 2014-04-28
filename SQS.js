@@ -1,12 +1,17 @@
 /*** dependencies ***/
 var AWS = require ( 'aws-sdk' );
-var config = require ( 'config' );
-var _ = require ( 'underscore' );
+var _ = require ( 'lodash' );
 var zlib = require ( 'zlib' );
 /********************/
 
 /*** logging ********/
-var l = require ( __dirname + '/log.js' ), logger = l.logger ( __filename ), inspect = l.inspect;
+var config = {
+    logLevels: {
+        SQS: 'ERROR'
+    }
+};
+
+var l = require ( 'tm-log' ), logger = l.logger ( __filename, config ), inspect = l.inspect;
 /********************/
 
 var sqsFactory = function ( sqs ) {
