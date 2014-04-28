@@ -1,6 +1,6 @@
 {
   "name": "tm-sqs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple wrapper for AWS sqs API",
   "main": "SQS.js",
   "repository": {
