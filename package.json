@@ -1,0 +1,21 @@
+{
+  "name": "tm-sqs",
+  "version": "0.0.1",
+  "description": "Simple wrapper for AWS sqs API",
+  "main": "SQS.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adriaan-pelzer/tm-sqs"
+  },
+  "author": "Adriaan Pelzer <adriaan.pelzer@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/adriaan-pelzer/tm-sqs/issues"
+  },
+  "dependencies": {
+    "aws-sdk": "~2.0.0-rc.14",
+    "lodash": "~2.4.1",
+    "zlib": "~1.0.5",
+    "tm-log": "0.0.0"
+  }
+}
