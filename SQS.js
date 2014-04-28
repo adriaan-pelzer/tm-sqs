@@ -1,5 +1,4 @@
 /*** dependencies ***/
-var AWS = require ( 'aws-sdk' );
 var _ = require ( 'lodash' );
 var zlib = require ( 'zlib' );
 /********************/
@@ -75,7 +74,14 @@ var sqsFactory = function ( sqs ) {
 };
 
 exports.init = function ( config ) {
+    var AWS = require ( 'aws-sdk' );
+
+    logger.trace ( 'Initialise SQS' );
+
     AWS.config.update ( _.pick ( config.aws, [ 'accessKeyId', 'secretAccessKey', 'region' ] ) );
+    return AWS;
 };
 
-exports.sqs = sqsFactory ( new AWS.SQS () );
+exports.sqs = function ( AWS ) {
+    return sqsFactory ( new AWS.SQS () )
+};
