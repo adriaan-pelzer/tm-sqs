@@ -73,15 +73,10 @@ var sqsFactory = function ( sqs ) {
     };
 };
 
-exports.init = function ( config ) {
+exports.sqs = function ( config ) {
     var AWS = require ( 'aws-sdk' );
 
-    logger.trace ( 'Initialise SQS' );
-
     AWS.config.update ( _.pick ( config.aws, [ 'accessKeyId', 'secretAccessKey', 'region' ] ) );
-    return AWS;
-};
 
-exports.sqs = function ( AWS ) {
-    return sqsFactory ( new AWS.SQS () )
+    return sqsFactory ( new AWS.SQS );
 };
