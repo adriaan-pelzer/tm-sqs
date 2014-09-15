@@ -76,7 +76,7 @@ var sqsFactory = function ( sqs ) {
 exports.sqs = function ( config ) {
     var AWS = require ( 'aws-sdk' );
 
-    AWS.config.update ( _.pick ( config.aws, [ 'accessKeyId', 'secretAccessKey', 'region' ] ) );
+    AWS.config.update ( _.pick ( config.aws, [ 'accessKeyId', 'secretAccessKey', 'region', 'paramValidation', 'computeChecksums' ] ) );
 
     return sqsFactory ( new AWS.SQS );
 };
