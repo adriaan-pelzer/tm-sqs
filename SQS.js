@@ -1,6 +1,5 @@
 /*** dependencies ***/
 var _ = require ( 'lodash' );
-var zlib = require ( 'zlib' );
 /********************/
 
 /*** logging ********/

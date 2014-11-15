@@ -15,7 +15,6 @@
   "dependencies": {
     "aws-sdk": "~2.0.0-rc.14",
     "lodash": "~2.4.1",
-    "zlib": "~1.0.5",
     "tm-log": "~0.0.0"
   }
 }
